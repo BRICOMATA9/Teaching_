@@ -1,0 +1,3 @@
+#!/bin/bash
+
+gcc -Iinclude $1  `allegro-config --cflags --libs` -lm; ./a.out

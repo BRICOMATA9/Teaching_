@@ -1,0 +1,9 @@
+public class test2
+{
+ public static scannner scan=new Scanner(System.in);
+ public static void main (String[] args)
+ {
+  String ch1;
+  ch1=scan.nextInt();
+ }
+}

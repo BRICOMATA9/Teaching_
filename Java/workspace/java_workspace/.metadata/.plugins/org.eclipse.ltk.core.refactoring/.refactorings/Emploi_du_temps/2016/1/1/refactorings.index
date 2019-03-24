@@ -1,0 +1,61 @@
+1451943773835	Delete element
+1451951250776	Delete element
+1451951259351	Delete element
+1451951483793	Delete element
+1451952771990	Move compilation unit
+1451952808498	Move compilation unit
+1451952952780	Rename package 'Ajouter'
+1451952960130	Rename package 'Afficher'
+1452012815033	Rename package 'Interfaces'
+1452014048214	Rename package 'IDAO'
+1452014060934	Rename package 'Interfaces'
+1452019972892	Rename package 'bdd'
+1452019981548	Rename package 'bdd_'
+1452020004145	Rename package 'bdd'
+1452020169874	Rename package 'bdd_'
+1452020212054	Rename package 'Entities'
+1452025992330	Delete element
+1452026794199	Delete element
+1452027294168	Delete element
+1452027908121	Delete element
+1452032086454	Delete element
+1452032090186	Delete element
+1452032093678	Delete element
+1452032194047	Rename package 'sql'
+1452032210251	Rename package 'bdd'
+1452032220427	Rename package 'afficher'
+1452032229739	Rename package 'ajouter'
+1452032244434	Rename package 'modifier'
+1452032288214	Rename package 'Afficher'
+1452032296440	Rename package 'Ajouter'
+1452032303855	Rename package 'Supprimer'
+1452032315950	Rename package 'Modifier'
+1452040749837	Delete element
+1452046417148	Delete elements
+1452047200581	Move compilation unit
+1452047205031	Delete element
+1452047626570	Move compilation units
+1452047632224	Delete element
+1452047677315	Rename package 'Interface.supprimer'
+1452047685621	Move compilation unit
+1452047690448	Delete element
+1452047722917	Move compilation units
+1452047727418	Delete element
+1452047756133	Move compilation unit
+1452047760008	Delete element
+1452083119186	Encapsulate field 'successeur'
+1452083128199	Encapsulate field 'predecesseur'
+1452088017000	Rename type 'SupprimerCours'
+1452088050777	Move compilation unit
+1452091713159	Delete elements
+1452091730705	Delete element
+1452098660714	Encapsulate field 'type'
+1452215772005	Rename type 'TraitementCours'
+1452215783952	Rename type 'TraitementTP'
+1452388493590	Delete element
+1452388499423	Delete element
+1452394005879	Delete element
+1452394013367	Delete element
+1452395826634	Delete element
+1452439368189	Rename type 'AfficherSalleLibre'
+1452439670752	Delete element
