@@ -21,8 +21,7 @@ void reglages(BITMAP *bmp,int *ptempoglobale,int *pdx,int *ptmpdx,int *ptmpimg);
 //  ( à terme il faudrait gérer ça en allocation dynamique )
 #define NIMAGE 6
 
-int main()
-{
+int main(){
 
     // LES INFORMATIONS SUIVANTES VONT ALLER DANS UNE STRUCTURE ACTEUR
     //   ( pour pouvoir gérer plusieurs sprites animés )
@@ -179,9 +178,12 @@ void reglages(BITMAP *bmp,int *ptempoglobale,int *pdx,int *ptmpdx,int *ptmpimg){
     textprintf_ex(bmp,font,16,50,makecol(255,255,255),0,"F7 - F8 :       tmpimg = %d",*ptmpimg);
 
 
-    if (key[KEY_F1]) (*ptempoglobale)--;
-    if (*ptempoglobale<0) *ptempoglobale=0;
-    if (key[KEY_F2]) (*ptempoglobale)++;
+    if (key[KEY_F1]) 
+    	(*ptempoglobale)--;
+    if (*ptempoglobale<0)
+    	*ptempoglobale=0;
+    if (key[KEY_F2]) 
+    	(*ptempoglobale)++;
     if (*ptempoglobale>100) *ptempoglobale=100;
 
     if ( (key[KEY_F3] && *pdx>0) || (key[KEY_F4] && *pdx<0) ) (*pdx)--;

@@ -4,12 +4,12 @@ void main(int argc, char *argv[]){
 	
 	lancerAllegro(800,600);
 	
-	BITMAP * map = load_bitmap("../res/desert.bmp",NULL);
-	if (!map)  {
-		allegro_message("pas pu trouver/test.bmp");
-		allegro_exit(); 
-		exit(EXIT_FAILURE);
-	}
+/*	BITMAP * map = load_bitmap("../res/test.bmp",NULL);*/
+/*	if (!map)  {*/
+/*		allegro_message("pas pu trouver/test.bmp");*/
+/*		allegro_exit(); */
+/*		exit(EXIT_FAILURE);*/
+/*	}*/
 	
 	BITMAP * background = create_bitmap(SCREEN_W,SCREEN_H);
 	BITMAP * cadre      = create_bitmap(SCREEN_W,SCREEN_H);
@@ -19,7 +19,7 @@ void main(int argc, char *argv[]){
 	int first = 1;
 	
 	while (!key[KEY_ESC]){
-		blit(map,background,0,0,0,0,SCREEN_W,SCREEN_H);
+/*		blit(map,background,0,0,0,0,SCREEN_W,SCREEN_H);*/
 		// 1ère partie
 		rectfill(background, 50 , 50, 70 , 70, makecol(  0,  0,255));
 		rectfill(background, 70 , 50, 90 , 70, makecol(255,255,255));

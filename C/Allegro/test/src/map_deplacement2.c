@@ -44,7 +44,7 @@ void main(){
 		}
 		
 		show_mouse(map);
-		blit(map,screen,pos_x,pos_y,0,0,SCREEN_W,SCREEN_H);
+		blit(map,screen,mouse -400,mouse_y - 300,0,0,SCREEN_W,SCREEN_H);
 /*		show_mouse(screen);*/
 		
 /*		*/

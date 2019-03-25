@@ -249,7 +249,7 @@ int main()
         blit(page,screen,0,0,0,0,SCREEN_W,SCREEN_H);
 
         // petite temporisation
-        rest(10);
+        rest(100);
     }
 
     return 0;

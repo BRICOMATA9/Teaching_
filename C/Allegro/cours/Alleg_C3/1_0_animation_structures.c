@@ -75,8 +75,7 @@ void dessinerTabActeurs(BITMAP *bmp,t_acteur * tab[NACTEUR]);
 /* initialisation puis boucle d'animation */
 /******************************************/
 
-int main()
-{
+int main(){
     // Le tableau regroupant tous les acteurs
     // c'est un tableau de pointeurs sur structures t_acteurs
     t_acteur * mesActeurs[NACTEUR];
