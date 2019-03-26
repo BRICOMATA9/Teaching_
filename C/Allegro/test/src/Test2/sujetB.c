@@ -4,7 +4,7 @@ void main(int argc, char *argv[]){
 	
 	lancerAllegro(800,600);
 	
-	BITMAP * background = load_bitmap("../res/test1.bmp",NULL);
+	BITMAP * background = load_bitmap("test.bmp",NULL);
 	if (!background)  {
 		allegro_message("pas pu trouver/test.bmp");
 		allegro_exit(); 
