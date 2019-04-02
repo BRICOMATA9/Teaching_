@@ -19,18 +19,18 @@ typedef struct listeActeurs {
 } t_listeActeurs;
 
 typedef struct joueur {
-	int x, y;	// position
-	int tx, ty;	// taille
-	int vit;	// vitesse des déplacements (nombre de pixels)
+	int x, y;	   // position
+	int tx, ty;	 // taille
+	int vit;	   // vitesse des déplacements (nombre de pixels)
 	int cpttir0; // tempo armement 0
 	int cpttir1; // tempo armement 1
 	BITMAP *img; // sprite (image chargée)
 } t_joueur;
 
 typedef struct ennemi {
-	int x, y;	// position
-	int dx, dy;	// vecteur déplacement
-	int tx, ty;	// taille
+	int x, y;		 // position
+	int dx, dy;	 // vecteur déplacement
+	int tx, ty;	 // taille
 	BITMAP *img; // sprite (image chargée)
 } t_ennemi;
 
@@ -50,7 +50,6 @@ void dessinerJoueur        (BITMAP *bmp       ,t_joueur       *joueur   );
 void dessinerEnnemi        (BITMAP *bmp       ,t_ennemi       *ennemi   );
 
 t_acteur* ajouterActeur     (t_listeActeurs *la, int x, int y, int type);
-void      destinActeur      (t_acteur *acteur);
 void      enleverActeur     (t_listeActeurs *la, int i);
 
 void collisionActeur       (t_ennemi *ennemi  ,t_acteur *acteur);
@@ -84,6 +83,7 @@ int main() {
 		if (clock() > start + 10000) {
 			start = clock();
 			blit(decor, page, 0, 0, 0, 0, SCREEN_W, SCREEN_H);
+			
 			actualiserJoueur(vaisseau, acteurs);
 			actualiserEnnemi(cible);
 			actualiserListeActeurs(acteurs);
@@ -105,13 +105,13 @@ END_OF_MAIN();
 
 t_acteur *creerActeur(int x, int y, int type) {
 	t_acteur *nouv;
-	nouv               =(t_acteur *)malloc(1 * sizeof(t_acteur));
-	nouv->x            =x;
-	nouv->y            =y;
-	nouv->type         =type;
-	nouv->comportement =0; //
-	nouv->cptexplo     =0; // pas encore explosé mais on initialise par sécurité
-	nouv->vivant       =1;
+	nouv               = (t_acteur *)malloc(1 * sizeof(t_acteur));
+	nouv->x            = x;
+	nouv->y            = y;
+	nouv->type         = type;
+	nouv->comportement = 0; //
+	nouv->cptexplo     = 0; // pas encore explosé mais on initialise par sécurité
+	nouv->vivant       = 1;
 
 	switch (type) {
 	// laser
@@ -238,7 +238,6 @@ t_acteur *ajouterActeur(t_listeActeurs *la, int x, int y, int type) {
 	// Sinon c'est qu'il y a un problème de cohérence
 	else
 		allegro_message("Anomalie gestion ajouterActeur : liste corrompue");
-
 	return acteur;
 }
 
@@ -274,13 +273,6 @@ void dessinerListeActeurs(BITMAP *bmp, t_listeActeurs *la) {
 			dessinerActeur(bmp, la->tab[i]);
 }
 
-void destinActeur(t_acteur *acteur) {
-	acteur->dx /= 2;
-	acteur->dy /= 2;
-	acteur->comportement = 1;
-	acteur->cptexplo = 0;
-}
-
 // Gérer collision (éventuelle) entre un acteur (un tir) et un ennemi
 void collisionActeur(t_ennemi *ennemi, t_acteur *acteur) {
 	int vx, vy, d2;
@@ -294,10 +286,15 @@ void collisionActeur(t_ennemi *ennemi, t_acteur *acteur) {
 		// (on reste sur le carré pour éviter de calculer la racine)
 		d2 = vx * vx + vy * vy;
 		// si dans le disque alors destin...
-		if (d2 < ennemi->tx * ennemi->tx / 4)
-			destinActeur(acteur);
+		if (d2 < ennemi->tx * ennemi->tx / 4){
+			acteur->dx /= 2;
+			acteur->dy /= 2;
+			acteur->comportement = 1;
+			acteur->cptexplo = 0;
+		}
 	}
 }
+
 // Gérer les collisions entre les acteurs (tous les tirs) et un ennemi
 void collisionListeActeurs(t_ennemi *ennemi, t_listeActeurs *la) {
 	int i;
@@ -306,6 +303,7 @@ void collisionListeActeurs(t_ennemi *ennemi, t_listeActeurs *la) {
 		if (la->tab[i] != NULL)
 			collisionActeur(ennemi, la->tab[i]);
 }
+
 // Allouer et initialiser un joueur
 t_joueur *creerJoueur(char *nomimage) {
 	t_joueur *nouv;
@@ -329,8 +327,7 @@ t_joueur *creerJoueur(char *nomimage) {
 
 // Actualiser joueur (bouger interactivement et tirer...)
 void actualiserJoueur(t_joueur *joueur, t_listeActeurs *la) {
-	// Déplacements instantanés (pas d'inertie)
-	// gestion d'un blocage dans une zone écran (moitié gauche)
+	// Déplacements instantanés (pas d'inertie) gestion d'un blocage dans une zone écran (moitié gauche)
 	if (key[KEY_LEFT]) {
 		joueur->x -= joueur->vit;
 		if (joueur->x < 0)
@@ -400,11 +397,9 @@ void actualiserEnnemi(t_ennemi *ennemi) {
 		ennemi->dy = rand() % 11 - 5;
 	}
 	// contrôle des bords : ici on décide de rebondir sur les bords
-	if ((ennemi->x < SCREEN_W / 2 && ennemi->dx < 0) ||
-			(ennemi->x + ennemi->tx > SCREEN_W && ennemi->dx > 0))
+	if ((ennemi->x < SCREEN_W / 2 && ennemi->dx < 0) || (ennemi->x + ennemi->tx > SCREEN_W && ennemi->dx > 0))
 		ennemi->dx = -ennemi->dx;
-	if ((ennemi->y < 0 && ennemi->dy < 0) ||
-			(ennemi->y + ennemi->ty > SCREEN_H && ennemi->dy > 0))
+	if ((ennemi->y < 0 && ennemi->dy < 0) || (ennemi->y + ennemi->ty > SCREEN_H && ennemi->dy > 0))
 		ennemi->dy = -ennemi->dy;
 	// calculer nouvelle position
 	// nouvelle position = position actuelle + deplacement
