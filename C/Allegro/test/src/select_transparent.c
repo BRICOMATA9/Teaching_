@@ -1,4 +1,5 @@
 #include "setup.h"
+#include <math.h> 
 
 void main(int argc, char *argv[]){
 	
@@ -32,9 +33,11 @@ void main(int argc, char *argv[]){
 				y0=mouse_y;
 				first=0;
 			}
-			rect (background, x0, y0, mouse_x, mouse_y, makeacol(0,0,0,255));
+			circle(background, x0, y0, sqrt(pow((mouse_x-x0),2) +pow((mouse_y-y0), 2)), makeacol(255,0,255,255));
+/*			rect (background, x0, y0, mouse_x, mouse_y, makeacol(0,0,0,255));*/
 		} else if(!first){
-			rectfill(dust, x0, y0, mouse_x, mouse_y, makeacol(255,0,255,255));
+			circlefill(dust, x0, y0, sqrt(pow((mouse_x-x0),2) +pow((mouse_y-y0), 2)), makeacol(255,0,255,255));
+/*			circlefill(dust,pos_x+400, pos_y+300, 150, makeacol(255,0,255,255));*/
 			first=1;
 		}
 		
