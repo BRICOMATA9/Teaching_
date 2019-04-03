@@ -1,20 +1,20 @@
 #include <allegro.h>
 #include <time.h>
 
-typedef struct acteur {
-	int x, y;
-	int dx, dy;
-	int tx, ty;
-	int couleur;
-	int type;
-	int comportement;
-	int cptexplo;
-	int vivant;
+typedef struct acteur{
+	int x,y;          // position du coin sup. gauche
+	int dx,dy;        // vecteur deplacement
+	int tx,ty;        // largeur hauteur
+	int couleur;      // couleur (ne sera plus pertinent avec des sprites importés...)
+	int type;         // type 0 laser, 1 missile (accélération horizontale)
+	int comportement; // 0 normal déplacement, 1 explosion
+	int cptexplo;     // temps depuis l'explosion
+	int vivant;       // 0 mort (doit disparaitre de la liste), 1 vivant
 } t_acteur;
 
 typedef struct listeActeurs {
-	int max;
-	int n;
+	int max;     // nombre maxi d'éléments
+	int n;       // nombre effectif de pointeurs utilisés
 	t_acteur **tab;
 } t_listeActeurs;
 
@@ -90,7 +90,8 @@ int main() {
 			
 			collisionListeActeurs(cible, acteurs);
 			
-			draw_sprite(page, vaisseau->img, vaisseau->x, vaisseau->y);
+/*			draw_sprite(page, vaisseau->img, vaisseau->x, vaisseau->y);*/
+			masked_blit(vaisseau->img, page, 0,0, vaisseau->x, vaisseau->y,vaisseau->tx, vaisseau->ty);
 			draw_sprite(page, cible->img, cible->x, cible->y);
 			
 			dessinerListeActeurs(page, acteurs);
@@ -117,9 +118,9 @@ t_acteur *creerActeur(int x, int y, int type) {
 	// laser
 	case 0:
 		nouv->tx = 30;
-		nouv->ty = 5;
-		nouv->dx = 10;
-		nouv->dy = 0;
+		nouv->ty = 5;  
+		nouv->dx = 10; // deplacement à droite
+		nouv->dy = 0;  //pas de deplacement en haut en en bas
 		nouv->couleur = makecol(255, 255, 0);
 		break;
 	// missile
