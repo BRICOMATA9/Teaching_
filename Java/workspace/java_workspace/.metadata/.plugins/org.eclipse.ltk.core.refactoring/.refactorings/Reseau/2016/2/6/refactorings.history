@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename compilation unit &apos;TP2.Interface.java&apos; to &apos;Interfere.java&apos;&#x0A;- Original project: &apos;Reseau&apos;&#x0A;- Original element: &apos;TP2.Interface.java&apos;&#x0A;- Renamed element: &apos;TP2.Interfere.java&apos;" description="Rename compilation unit &apos;Interface.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;TP2{Interface.java" name="Interfere.java" references="false" stamp="1455095506198" version="1.0"/>
-</session>

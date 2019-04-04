@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete 3 elements from project &apos;Mandelbrot&apos;&#x0A;- Original project: &apos;Mandelbrot&apos;&#x0A;- Original elements:&#x0A;     ComputingServer.java~&#x0A;     HttpRequestManager.java~&#x0A;     ServerHttp.java~" description="Delete elements" element1="src/serveurs/HttpRequestManager.java~" element2="src/serveurs/ComputingServer.java~" element3="src/serveurs/ServerHttp.java~" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="3" stamp="1460909641721" subPackages="false" version="1.0"/>
-</session>
