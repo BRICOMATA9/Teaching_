@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tp2;
+package TP1;
 
 /**
  *
  * @author aghiles
  */
-public class TP2 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Exo1 {
+    
+    public void afficher(){
+        System.out.println("H! !");
+    }
+    
+    public static void main (String[] args){
+        Exo1 exo1 = new Exo1();
+        exo1.afficher();
     }
     
 }
