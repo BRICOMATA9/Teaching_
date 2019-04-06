@@ -1,4 +1,4 @@
-package Exo2;
+package exo2;
 
 public class App {
 

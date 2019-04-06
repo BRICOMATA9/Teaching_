@@ -1,4 +1,4 @@
-package tp1;
+package exo1;
 
 public class Essais {
 

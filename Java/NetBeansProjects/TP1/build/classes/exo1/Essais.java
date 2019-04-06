@@ -1,4 +1,4 @@
-package tp1;
+package exo1;
 
 public class Essais {
 
@@ -34,6 +34,16 @@ public class Essais {
         byte b2 = 10;
         int b3 = (int)b2 * (int)b1;
         System.out.println("b3 = " + b3);
+    }
+    
+/**
+* Resume du role de la methode.
+* Commentaires détailles sur le role de la methode
+* @param val la valeur a traiter
+* @return la valeur calculée
+*/
+    public int methode(int val) {
+        return 0;
     }
 
 }
