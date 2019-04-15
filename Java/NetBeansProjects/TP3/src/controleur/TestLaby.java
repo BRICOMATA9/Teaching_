@@ -72,16 +72,17 @@ public class TestLaby {
 	//public void 
 	public static void main(String[] args) {
 		try {
-			console = new LabyConsole(); //  instancier la console			
-
+			// 1 Lire le fichier
+			console = new LabyConsole(); //  instancier la console
 			System.out.println("Entrez le nom du fichier du labyrinthe :");
-			String nomlaby = "labyrinthe.txt"; //console.toString(); // récupérer le nom du fichier
+			String nomlaby = console.lireFichier(); // récupérer le nom du fichier
 
+			// 2 initialiser le labyrinthe
 			TestLaby test;
 			test = new TestLaby(new File(nomlaby)); // instancier le labyrinthe à partir du fichier
-
 			console.affiche(laby); // affiche le labyrinthe en console
 
+			// 3 Lancer le jeux
 			char choix = console.menu(); // afficher le menu labyrinthe en mode console
 
 			switch (choix) {

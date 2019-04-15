@@ -39,7 +39,8 @@ digraph G {
 <tr><td align="center" balign="center"> TestLaby </td></tr>
 		</table></td></tr>
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-<tr><td align="left" balign="left">  </td></tr>
+<tr><td align="left" balign="left"> - laby : Labyrinthe </td></tr>
+<tr><td align="left" balign="left"> - console : LabyConsole </td></tr>
 		</table></td></tr>
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="left" balign="left"> + TestLaby(fic : File) </td></tr>
@@ -123,7 +124,15 @@ digraph G {
 <tr><td align="center" balign="center"> Labyrinthe </td></tr>
 		</table></td></tr>
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
-<tr><td align="left" balign="left">  </td></tr>
+<tr><td align="left" balign="left"> - tailleX : int </td></tr>
+<tr><td align="left" balign="left"> - tailleY : int </td></tr>
+<tr><td align="left" balign="left"> - departX : int </td></tr>
+<tr><td align="left" balign="left"> - departY : int </td></tr>
+<tr><td align="left" balign="left"> - arriveeX : int </td></tr>
+<tr><td align="left" balign="left"> - arriveeY : int </td></tr>
+<tr><td align="left" balign="left"> - posX : int </td></tr>
+<tr><td align="left" balign="left"> - posY : int </td></tr>
+<tr><td align="left" balign="left"> - grille : ArrayList&lt;Case&gt; </td></tr>
 		</table></td></tr>
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="left" balign="left"> + Labyrinthe(fic : File) </td></tr>
@@ -151,7 +160,7 @@ digraph G {
 		</table></td></tr>
 		<tr><td><table border="0" cellspacing="0" cellpadding="1">
 <tr><td align="left" balign="left"> + LabyConsole() </td></tr>
-<tr><td align="left" balign="left"> + toString() : String </td></tr>
+<tr><td align="left" balign="left"> + lireFichier() : String </td></tr>
 <tr><td align="left" balign="left"> + menu() : char </td></tr>
 <tr><td align="left" balign="left"> + affiche(c : Case) </td></tr>
 <tr><td align="left" balign="left"> + affiche(laby : Labyrinthe) </td></tr>

@@ -23,10 +23,13 @@ public class Labyrinthe {
 			char car;
 			tailleX = sc.nextInt();  // récupérer la taille en X du labyrinthe									
 			tailleY = sc.nextInt();  // récupérer la taille en Y du labyrinthe
+			
 			posX = departX = sc.nextInt();  // récupérer le point de départ courant en X du labyrinthe
 			posY = departY = sc.nextInt();  // récupérer le point de départ courant en Y du labyrinthe
+			
 			arriveeX = sc.nextInt();  // récupérer le point d’arrivée en X du labyrinthe
 			arriveeY = sc.nextInt();  // récupérer le point d’arrivée en Y du labyrinthe
+			
 			System.out.println(tailleX + " " + tailleY);
 			Case unecase = null; // initialiser une case
 			grille = new ArrayList<>(); // instancier l’ArrayList de cases

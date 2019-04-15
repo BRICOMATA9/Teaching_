@@ -6,10 +6,10 @@ import modele.*;
 public class LabyConsole {
 	Scanner in = new Scanner(System.in); // lire au clavier
 
-	public String toString() {
+	public String lireFichier() {
 		String s;
 		s = in.next();
-		return s;
+		return "labyrinthe.txt";
 	}
 
 	public char menu() {
