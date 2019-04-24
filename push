@@ -3,7 +3,6 @@
 mypath=`realpath "$0"`
 directory=`dirname "$mypath"`
 filename=`basename "$directory"`
-filename=Teaching
 cd "$directory"
 
 git config --global user.email "githubfortyuds@gmail.com"
