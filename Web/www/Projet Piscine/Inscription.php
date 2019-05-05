@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?php
 $mail = isset($_POST['mail'])?
 $_POST['mail']:""; 

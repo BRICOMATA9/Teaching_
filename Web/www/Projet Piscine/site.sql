@@ -1,15 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le :  sam. 05 mai 2018 à 17:36
--- Version du serveur :  5.6.38
--- Version de PHP :  7.2.1
-CREATE DATABASE Web;
-USE Web; 
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  jeu. 03 mai 2018 à 11:22
+-- Version du serveur :  5.7.19
+-- Version de PHP :  5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `Web`
+-- Base de données :  `site`
 --
 
 -- --------------------------------------------------------
@@ -28,7 +28,8 @@ SET time_zone = "+00:00";
 -- Structure de la table `emploi`
 --
 
-CREATE TABLE `emploi` (
+DROP TABLE IF EXISTS `emploi`;
+CREATE TABLE IF NOT EXISTS `emploi` (
   `Nom` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `Type` int(11) NOT NULL,
   `Durée` int(11) NOT NULL,
@@ -41,7 +42,8 @@ CREATE TABLE `emploi` (
 -- Structure de la table `evenements`
 --
 
-CREATE TABLE `evenements` (
+DROP TABLE IF EXISTS `evenements`;
+CREATE TABLE IF NOT EXISTS `evenements` (
   `Lieu` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `Date` date NOT NULL,
   `Heure` time NOT NULL,
@@ -58,24 +60,18 @@ CREATE TABLE `evenements` (
 -- Structure de la table `profil`
 --
 
-CREATE TABLE `profil` (
-  `mail` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `dateN` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `statut` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `etude` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `site` varchar(255) COLLATE latin1_general_ci NOT NULL,
+DROP TABLE IF EXISTS `profil`;
+CREATE TABLE IF NOT EXISTS `profil` (
+  `email` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `Age` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `Activité` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `Diplôme` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `Lien site` varchar(255) COLLATE latin1_general_ci NOT NULL,
   `CV` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `cartepro` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `photo` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `comment` varchar(255) COLLATE latin1_general_ci NOT NULL
+  `Carte Pro` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `Photos` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `Type` varchar(255) COLLATE latin1_general_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Déchargement des données de la table `profil`
---
-
-INSERT INTO `profil` (`mail`, `dateN`, `statut`, `etude`, `site`, `CV`, `cartepro`, `photo`, `comment`) VALUES
-('edesdet@gmail.com', '06', 'Etudiant', 'Baccalauréat', 'https://www.google.com', 'Storyboard.pdf', 'Storyboard.pdf', 'Logo.png', 'Yes');
 
 -- --------------------------------------------------------
 
@@ -83,36 +79,16 @@ INSERT INTO `profil` (`mail`, `dateN`, `statut`, `etude`, `site`, `CV`, `cartepr
 -- Structure de la table `utilisateur`
 --
 
-CREATE TABLE `utilisateur` (
-  `mail` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `nom` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `prenom` varchar(255) COLLATE latin1_general_ci NOT NULL,
-  `pseudo` varchar(255) COLLATE latin1_general_ci DEFAULT NULL,
-  `mdp` varchar(255) COLLATE latin1_general_ci NOT NULL
+DROP TABLE IF EXISTS `utilisateur`;
+CREATE TABLE IF NOT EXISTS `utilisateur` (
+  `Prénom` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `Nom` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `Pseudo` varchar(255) COLLATE latin1_general_ci DEFAULT NULL,
+  `Mot de passe` varchar(255) COLLATE latin1_general_ci NOT NULL,
+  `Email` varchar(255) COLLATE latin1_general_ci DEFAULT NULL,
+  PRIMARY KEY (`Nom`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Déchargement des données de la table `utilisateur`
---
-
-INSERT INTO `utilisateur` (`mail`, `nom`, `prenom`, `pseudo`, `mdp`) VALUES
-('edesdet@gmail.com', 'Desdet', 'Emma', 'e', 'e');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `profil`
---
-ALTER TABLE `profil`
-  ADD PRIMARY KEY (`mail`);
-
---
--- Index pour la table `utilisateur`
---
-ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`mail`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

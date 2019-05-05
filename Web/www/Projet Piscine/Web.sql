@@ -6,8 +6,6 @@
 -- Généré le :  sam. 05 mai 2018 à 17:36
 -- Version du serveur :  5.6.38
 -- Version de PHP :  7.2.1
-CREATE DATABASE Web;
-USE Web; 
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
