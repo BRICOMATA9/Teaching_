@@ -73,7 +73,7 @@ public static void main(String[] args){
 	
 	System.out.println("-------------------------------------");
 	double difference=pc.prixModification(1.8,512,120);
-	System.out.println("Différence= "+difference);
+	System.out.println("Difference= "+difference);
 	
 	System.out.println("\nNouvelle configuration:\n");
 	System.out.println("-------------------------\n");

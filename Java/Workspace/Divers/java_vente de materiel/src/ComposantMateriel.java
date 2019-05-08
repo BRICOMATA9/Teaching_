@@ -15,7 +15,7 @@ public class ComposantMateriel {
 	}
 
 	public void lirePrix(){
-		System.out.println("Donnez le prix du matériel:");
+		System.out.println("Donnez le prix du materiel:");
 		prix=sc.nextDouble();
 	}
 	public double getFrequence() {
@@ -47,6 +47,6 @@ public class ComposantMateriel {
 	}
 
 	public String toString(){
-		return "frequence: "+frequence+" mémoire: "+memoire+" disque dur: "+disqueDur;
+		return "frequence: "+frequence+" memoire: "+memoire+" disque dur: "+disqueDur;
 	}
 }
