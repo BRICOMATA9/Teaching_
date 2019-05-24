@@ -1,8 +1,5 @@
 package serialization;
 
-/**
- * ByteBuffer personnalisé pour sérialiser nos objets
- */
 import java.nio.ByteBuffer;
 
 public class SerializerBuffer {
@@ -42,7 +39,6 @@ public class SerializerBuffer {
         } else {
             this.buffer.putInt( 1 );
             ms.serialize( this );
-
         }
     }
 
