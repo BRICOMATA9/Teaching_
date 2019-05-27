@@ -1,5 +1,8 @@
 import java.util.Arrays;
+import java.util.ArrayList;
+
 import java.util.Comparator;
+import java.util.Collections;
 
 class Person implements Comparable<Person> {
   private String firstName;
@@ -45,25 +48,26 @@ class ComparePersons implements Comparator<Person> {
 
 public class MainClass {
   public static void main(String[] args) {
-    Person[] authors = { new Person("A", "S"), 
-                         new Person("J", "G"),
-                         new Person("T", "C"), 
-                         new Person("C", "S"), 
-                         new Person("P", "C"), 
-                         new Person("B", "B") };
+    ArrayList<Person> authors = new ArrayList<Person>();
+			authors.add(new Person("A", "S"));
+			authors.add(new Person("J", "G"));
+			authors.add(new Person("T", "C")); 
+			authors.add(new Person("C", "S")); 
+			authors.add(new Person("P", "C"));
+			authors.add(new Person("B", "B"));
     
-    System.out.println("Original order:");
-    for (Person author : authors) {
-      System.out.println(author);
-    }
+//    System.out.println("Original order:");
+//    for (Person author : authors) {
+//      System.out.println(author);
+//    }
     
-    Arrays.sort(authors, new ComparePersons()); // Sort using comparator
-    System.out.println("\nOrder after sorting using comparator:");
-    for (Person author : authors) {
-      System.out.println(author);
-    }
+//    Collections.sort(authors, new ComparePersons()); // Sort using comparator
+//    System.out.println("\nOrder after sorting using comparator:");
+//    for (Person author : authors) {
+//      System.out.println(author);
+//    }
     
-    Arrays.sort(authors); // Sort using Comparable method
+    Collections.sort(authors); // Sort using Comparable method
     System.out.println("\nOrder after sorting using Comparable method:");
     for (Person author : authors) {
       System.out.println(author);
