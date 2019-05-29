@@ -49,12 +49,12 @@ class ComparePersons implements Comparator<Person> {
 public class MainClass {
   public static void main(String[] args) {
     ArrayList<Person> authors = new ArrayList<Person>();
-			authors.add(new Person("A", "S"));
-			authors.add(new Person("J", "G"));
-			authors.add(new Person("T", "C")); 
-			authors.add(new Person("C", "S")); 
-			authors.add(new Person("P", "C"));
-			authors.add(new Person("B", "B"));
+//			authors.add(new Person("A", "S"));
+//			authors.add(new Person("J", "G"));
+//			authors.add(new Person("T", "C")); 
+//			authors.add(new Person("C", "S")); 
+//			authors.add(new Person("P", "C"));
+//			authors.add(new Person("B", "B"));
     
 //    System.out.println("Original order:");
 //    for (Person author : authors) {

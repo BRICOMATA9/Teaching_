@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-/*#include <string.h>*/
+#include <string.h>
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
@@ -10,6 +10,7 @@
 
 int main(){
 
+	//Lecture du port
 	char listenPort[6];
 	memset(listenPort, 0, sizeof listenPort);	// Mise à zéro du tampon
 	puts("Entrez le numéro de port utilisé en écoute (entre 1500 et 65000) : ");
@@ -20,13 +21,12 @@ int main(){
 	hints.ai_family = AF_INET;			 // IPv4
 	hints.ai_socktype = SOCK_STREAM; // TCP
 	hints.ai_flags = AI_PASSIVE;		 // Toutes les adresses disponibles
-
+	//Lecture de servinfo
 	int status;
 	if ((status = getaddrinfo(NULL, listenPort, &hints, &servinfo)) != 0) 
 		exit(EXIT_FAILURE);
-	
+	//SOCKET de connexion
 	int listenSocket;
-	//SOCKET
 	if ((listenSocket = socket(servinfo->ai_family, servinfo->ai_socktype, servinfo->ai_protocol)) == -1) 
 		exit(EXIT_FAILURE);
 	//BIND
@@ -35,7 +35,7 @@ int main(){
 	freeaddrinfo(servinfo);
 	//LISTEN
 	if (listen(listenSocket, 5) == -1) exit(EXIT_FAILURE);
-
+	//
 	struct sockaddr_in clientAddress;
 	socklen_t clientAddressLength = sizeof clientAddress;
 	int connectSocket;

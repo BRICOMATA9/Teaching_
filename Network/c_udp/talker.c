@@ -2,11 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-/*#include <netdb.h>*/
-/*#include <netinet/in.h>*/
+#include <netdb.h>
+#include <netinet/in.h>
 
-
-/*#define str(x) # x*/
+#define str(x) # x
 
 int main(){
 	int socketDescriptor, status;
